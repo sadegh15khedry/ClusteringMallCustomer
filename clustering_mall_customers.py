@@ -58,7 +58,7 @@ show()
 
 
 #clustering using k-means algorithm
-kmeans = KMeans(n_clusters=2)
+kmeans = KMeans(n_clusters=3)
 kmeans.fit(df)
 label = kmeans.predict(df)
 df['label'] = label
@@ -73,10 +73,9 @@ for label in df['label']:
       plt.scatter(subset['Age'], subset['Annual Income (k$)'], s=100, c="red")
   elif label == 1:
       plt.scatter(subset['Age'], subset['Annual Income (k$)'], s=100, c="blue")
-  # elif label == 2:
-  #     plt.scatter(subset['Age'], subset['Annual Income (k$)'], s=100, c="green")
-  # elif label == 3:
-  #     plt.scatter(subset['Age'], subset['Annual Income (k$)'], s=100, c="brown")
+  elif label == 2:
+      plt.scatter(subset['Age'], subset['Annual Income (k$)'], s=100, c="green")
+
       
 
 plt.title('Customer Segments')
