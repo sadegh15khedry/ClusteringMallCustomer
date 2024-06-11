@@ -1,44 +1,73 @@
-# Clustering Mall Customers
+# Mall Customer Segmentation
 
-This project demonstrates how to perform clustering on mall customer data to segment customers based on their spending habits and other factors.
+This project aims to segment mall customers based on their demographic and spending behavior. The dataset used for this analysis is available in the `Mall_Customers.csv` file.
 
-## Features
-- Data preprocessing and cleaning
-- Implementation of clustering algorithms (e.g., K-Means)
-- Visualization of clusters
+## Requirements
 
-## Technologies Used
-- Python
-- Pandas
-- Scikit-learn
-- Matplotlib
-- Seaborn
+Make sure you have the following Python packages installed:
 
-## Installation
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/sadegh15khedry/ClusteringMallCustomer.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd ClusteringMallCustomer
-    ```
-3. Install the required packages:
-    ```sh
-    pip install -r requirements.txt
-    ```
+- pandas
+- matplotlib
+- scikit-learn
+
+You can install these packages using pip:
+
+pip install pandas matplotlib scikit-learn
 
 ## Usage
-- Run the `clustering_mall_customers.py` script to perform clustering:
-    ```sh
-    python clustering_mall_customers.py
-    ```
+
+1. Clone the repository:
+```bash
+git clone https://github.com/sadegh15khedry/ClusteringMallCustomer.git
+```
+2. Navigate to the project directory:
+```bash
+cd ClusteringMallCustomer
+```
+3. Run the Python script:
+```bash
+python mall_customer_segmentation.py
+```
+## Description
+
+- `mall_customer_segmentation.py`: This script performs customer segmentation using K-means clustering algorithm. It preprocesses the data, finds the optimal number of clusters using the elbow method, applies K-means clustering, and visualizes the clusters.
+
+## Dataset
+
+The dataset contains the following columns:
+
+- `CustomerID`: Unique identifier for each customer.
+- `Genre`: Gender of the customer (0 for Female, 1 for Male).
+- `Age`: Age of the customer.
+- `Annual Income (k$)`: Annual income of the customer in thousands of dollars.
+- `Spending Score (1-100)`: Spending score assigned to the customer based on their spending behavior.
+
+## Methodology
+
+1. **Data Preprocessing**:
+   - Missing values are handled, if any.
+   - Categorical encoding is performed for the 'Genre' column.
+
+2. **Normalization**:
+   - The data is normalized using the z-score method.
+
+3. **Finding Optimal K**:
+   - The elbow method is used to find the optimal number of clusters (k).
+![Screenshot 2024-06-11 183628](https://github.com/sadegh15khedry/ClusteringMallCustomer/assets/90490848/d19d56b6-5073-41a3-82ff-44db6da31a54)
+
+
+4. **Clustering**:
+   - K-means clustering algorithm is applied with the optimal k value.
+
+5. **Visualization**:
+   - The clusters are visualized using a scatter plot with 'Age' and 'Annual Income' as axes. Each cluster is represented by a different color.
+![Screenshot 2024-06-11 183636](https://github.com/sadegh15khedry/ClusteringMallCustomer/assets/90490848/834eed63-a91d-4da2-b6ae-c42ead54cc9b)
+
+
+## Results
+
+The scatter plot shows distinct clusters of mall customers based on their age and annual income. Each cluster represents a different segment of customers.
 
 ## License
-This project is licensed under the Apache-2.0 License. See the [LICENSE](LICENSE) file for details.
 
-## Author
-- Sadegh Khedry
-
-## Acknowledgements
-- Contributions and feedback are welcome.
+This project is licensed under the Apache-2.0 License - see the LICENSE file for details.
